@@ -4,8 +4,5 @@
 -- exit insert mode with jk
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
 
--- C-P classic
-vim.keymap.set("n", "<C-P>", "<leader>ff")
-
 -- Source nvim
 vim.keymap.set("n", "<leader>sv", "<cmd>luafile $MYVIMRC<cr>", { desc = "Source nvim config" })
