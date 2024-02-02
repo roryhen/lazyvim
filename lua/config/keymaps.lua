@@ -6,3 +6,6 @@ vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "<ESC
 
 -- Source nvim
 vim.keymap.set("n", "<leader>sv", "<cmd>luafile $MYVIMRC<cr>", { desc = "Source nvim config" })
+
+-- Add dashboard shortcut
+vim.keymap.set("n", "<leader>H", "<cmd>Alpha<cr>", { desc = "Go home" })

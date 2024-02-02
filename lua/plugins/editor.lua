@@ -1,5 +1,24 @@
 return {
   {
+    "goolord/alpha-nvim",
+    opts = function()
+      local dashboard = require("alpha.themes.dashboard")
+      local logo = [[
+ __         ______   ________  __      __  _______   ________  __     __ 
+/  |       /      \ /        |/  \    /  |/       \ /        |/  |   /  |
+$$ |      /$$$$$$  |$$$$$$$$/ $$  \  /$$/ $$$$$$$  |$$$$$$$$/ $$ |   $$ |
+$$ |      $$ |__$$ |    /$$/   $$  \/$$/  $$ |  $$ |$$ |__    $$ |   $$ |
+$$ |      $$    $$ |   /$$/     $$  $$/   $$ |  $$ |$$    |   $$  \ /$$/ 
+$$ |      $$$$$$$$ |  /$$/       $$$$/    $$ |  $$ |$$$$$/     $$  /$$/  
+$$ |_____ $$ |  $$ | /$$/____     $$ |    $$ |__$$ |$$ |_____   $$ $$/   
+$$       |$$ |  $$ |/$$      |    $$ |    $$    $$/ $$       |   $$$/    
+$$$$$$$$/ $$/   $$/ $$$$$$$$/     $$/     $$$$$$$/  $$$$$$$$/     $/
+      ]]
+
+      dashboard.section.header.val = vim.split(logo, "\n")
+    end,
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       filesystem = {
@@ -18,43 +37,9 @@ return {
     },
   },
   {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = { eslint = {} },
-      setup = {
-        eslint = function()
-          require("lazyvim.util").lsp.on_attach(function(client)
-            if client.name == "eslint" then
-              client.server_capabilities.documentFormattingProvider = true
-            elseif client.name == "tsserver" then
-              client.server_capabilities.documentFormattingProvider = false
-            end
-          end)
-        end,
-      },
-    },
-  },
-  {
     "folke/tokyonight.nvim",
     opts = {
       style = "night",
-    },
-  },
-  {
-    "terrortylor/nvim-comment",
-  },
-  {
-    "pwntester/octo.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("octo").setup({ enable_builtin = true })
-    end,
-    keys = {
-      { "<leader>O", "<cmd>Octo<cr>", desc = "Octo" },
     },
   },
 }
