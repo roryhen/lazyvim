@@ -19,24 +19,6 @@ $$$$$$$$/ $$/   $$/ $$$$$$$$/     $$/     $$$$$$$/  $$$$$$$$/     $/
     end,
   },
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      filesystem = {
-        filtered_items = {
-          hide_dotfiles = false,
-        },
-      },
-    },
-  },
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    opts = {
-      open_mapping = [[<c-\>]],
-      size = 25,
-    },
-  },
-  {
     "folke/tokyonight.nvim",
     opts = {
       style = "night",

@@ -1,11 +1,17 @@
 return {
-  {
-    "mzarnitsa/psql",
-    opts = {
-      database_name = "production",
-      execute_line = "<leader>pl",
-      execute_selection = "<leader>pl",
-      execute_paragraph = "<leader>pr",
-    },
+  "kristijanhusak/vim-dadbod-ui",
+  dependencies = {
+    { "tpope/vim-dadbod", lazy = true },
+    { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
   },
+  cmd = {
+    "DBUI",
+    "DBUIToggle",
+    "DBUIAddConnection",
+    "DBUIFindBuffer",
+  },
+  init = function()
+    -- Your DBUI configuration
+    vim.g.db_ui_use_nerd_fonts = 1
+  end,
 }
