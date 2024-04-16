@@ -12,9 +12,13 @@ return {
         eslint = {},
         denols = {
           root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc", ".git", "import_map.json"),
-          tsserver = {
-            root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
-          },
+        },
+        tsserver = {
+          root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
+        },
+        graphql = {
+          -- filetypes = { "graphql", "typescriptreact", "javascriptreact", "typescript" },
+          root_dir = require("lspconfig.util").root_pattern(".git", "codegen.ts"),
         },
       },
       setup = {
@@ -29,6 +33,9 @@ return {
         end,
       },
     },
+  },
+  {
+    "jparise/vim-graphql",
   },
   {
     "terrortylor/nvim-comment",

@@ -6,6 +6,8 @@
 vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
 vim.keymap.set("v", "jk", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
 
+vim.keymap.set("v", "p", "P", { noremap = true, silent = true, desc = "Paste without overwriting register" })
+
 -- Source nvim
 vim.keymap.set("n", "<leader>sv", "<cmd>luafile $MYVIMRC<cr>", { desc = "Source nvim config" })
 
