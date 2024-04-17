@@ -1,5 +1,38 @@
 return {
   {
+    "goolord/alpha-nvim",
+    opts = function()
+      local dashboard = require("alpha.themes.dashboard")
+      local logo = [[
+ __         ______   ________  __      __  _______   ________  __     __ 
+/  |       /      \ /        |/  \    /  |/       \ /        |/  |   /  |
+$$ |      /$$$$$$  |$$$$$$$$/ $$  \  /$$/ $$$$$$$  |$$$$$$$$/ $$ |   $$ |
+$$ |      $$ |__$$ |    /$$/   $$  \/$$/  $$ |  $$ |$$ |__    $$ |   $$ |
+$$ |      $$    $$ |   /$$/     $$  $$/   $$ |  $$ |$$    |   $$  \ /$$/ 
+$$ |      $$$$$$$$ |  /$$/       $$$$/    $$ |  $$ |$$$$$/     $$  /$$/  
+$$ |_____ $$ |  $$ | /$$/____     $$ |    $$ |__$$ |$$ |_____   $$ $$/   
+$$       |$$ |  $$ |/$$      |    $$ |    $$    $$/ $$       |   $$$/    
+$$$$$$$$/ $$/   $$/ $$$$$$$$/     $$/     $$$$$$$/  $$$$$$$$/     $/
+      ]]
+
+      dashboard.section.header.val = vim.split(logo, "\n")
+    end,
+  },
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      style = "night",
+    },
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        layout_strategy = "vertical",
+      },
+    },
+  },
+  {
     "L3MON4D3/LuaSnip",
     keys = function()
       return {}
@@ -85,5 +118,22 @@ return {
         },
       },
     },
+  },
+  {
+    "kristijanhusak/vim-dadbod-ui",
+    dependencies = {
+      { "tpope/vim-dadbod", lazy = true },
+      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+    },
+    cmd = {
+      "DBUI",
+      "DBUIToggle",
+      "DBUIAddConnection",
+      "DBUIFindBuffer",
+    },
+    init = function()
+      -- Your DBUI configuration
+      vim.g.db_ui_use_nerd_fonts = 1
+    end,
   },
 }
