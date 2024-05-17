@@ -1,8 +1,9 @@
 return {
   {
     "L3MON4D3/LuaSnip",
-    keys = function()
-      return {}
-    end,
+    keys = {
+      { "<Tab>", false },
+      { "<S-Tab>", false },
+    },
   },
 }
