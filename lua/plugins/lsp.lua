@@ -7,9 +7,6 @@ return {
         denols = {
           root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
         },
-        tsserver = {
-          root_dir = require("lspconfig").util.root_pattern("package.json"),
-        },
         graphql = {
           root_dir = require("lspconfig").util.root_pattern("codegen.ts"),
         },
