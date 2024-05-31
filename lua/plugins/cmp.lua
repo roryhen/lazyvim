@@ -38,6 +38,15 @@ return {
           end
         end, { "i", "s" }),
       })
+
+      opts.sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "codeium" },
+        { name = "luasnip" },
+        { name = "path" },
+      }, {
+        { name = "buffer" },
+      })
     end,
   },
 }
