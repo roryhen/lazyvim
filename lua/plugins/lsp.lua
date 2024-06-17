@@ -10,6 +10,9 @@ return {
         graphql = {
           root_dir = require("lspconfig").util.root_pattern("codegen.ts"),
         },
+        eslint = {
+          root_dir = require("lspconfig").util.root_pattern("package.json"),
+        },
       },
     },
   },
