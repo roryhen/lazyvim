@@ -1,11 +1,4 @@
 local set = vim.keymap.set
--- exit insert/visual mode with jk
-set("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
-set("v", "jk", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
-set("i", "JK", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
-set("v", "JK", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
-
-set("v", "p", "P", { noremap = true, silent = true, desc = "Paste without overwriting register" })
 
 -- Source nvim
 set("n", "<leader>sv", "<cmd>luafile $MYVIMRC<cr>", { desc = "Source nvim config" })
